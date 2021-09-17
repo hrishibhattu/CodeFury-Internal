@@ -1,5 +1,7 @@
 # CodeFury-Internal
 
+## Project structure
+```elixir
 └───src:
     └───main:
         ├───java:

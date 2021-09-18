@@ -16,9 +16,16 @@
                                 │       EmployeeDAOImpl.java
         |               |               ...
         |               |
+        │               ├───factory: 
+        │               │       CustomerDAOFactory.java
+        │               │       EmployeeDAOFactory.java
+        |               |       ...
+        |               |
         │               ├───controller:
-        │               │       CustomerDAO.java
-        │               │       EmployeeDAO.java
+        │               |       CustomerLogInController.java
+        │               |       EmployeeLogInController.java
+        │               |       ProfileController.java
+        │               |       LogOutController.java
         |               |       ...  
         │               │
         │               ├───models:
@@ -38,13 +45,6 @@
                                 │       CustomerServiceImpl.java
                                 │       EmployeeServiceImpl.java
         |               |               ...
-        |               |       
-        │               |───servlet:
-        │               |       CustomerLogInServlet.java
-        │               |       EmployeeLogInServlet.java
-        │               |       ProfileServlet.java
-        │               |       LogOutServlet.java
-        |               |       ...
         |               | 
         │               |───utils:
         |               |       ...

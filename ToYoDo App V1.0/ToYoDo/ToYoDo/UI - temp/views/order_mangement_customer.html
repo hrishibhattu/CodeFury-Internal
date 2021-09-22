@@ -1,0 +1,72 @@
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="../css/order_management_customer.css">
+  <link rel="stylesheet" href="../css/generic.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src = "https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="../js/order_management_customer.js"></script>
+  <script src = "https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <div id = "title_bar">
+
+  	<div class = "title" id = "title_bar_title">ToYoDo</div>
+
+  	<button id = "title_bar_sign_out" type="button" data-tooltip="tooltip" data-placement="bottom" title = "Sign Out"><i class="fa fa-sign-out"></i></button>
+    
+    
+
+  </div>
+
+</head>
+
+<body>
+    
+
+  <div class = "datatable_view">
+    <label for="customer_product_status">Order Status:  </label>
+    <select name="customer_product_status" id="order_management_customer_status">
+    <option value="approved">Approved or completed</option>
+    <option value="pending">Pending for Approval</option>
+    </select><br><br>
+    <table id="order_management_pending_table" class="display_table" style="width:100%">
+            <thead>
+                <tr>
+                <th>Order Id</th>
+                <th>Order Date</th>
+                <th>Order Value</th>
+                <th>Shipping Cost</th>
+                <th>Total Order Value</th>    
+                <th>Approve</th>  
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+    </table>
+    <table id="order_management_approved_table" class="display_table" style="width:100%">
+            <thead>
+                <tr>
+                <th>Order Id</th>
+                <th>Order Date</th>
+                <th>Order Value</th>
+                <th>Shipping Cost</th>
+                <th>Total Order Value</th>    
+                <th>Status</th>  
+                <th>Invoice</th>  
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+    </table>
+  </div>
+
+
+</body>
+<iframe src = "footer.html"></iframe>
+</html>

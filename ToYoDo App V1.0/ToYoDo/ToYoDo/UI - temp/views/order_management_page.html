@@ -1,0 +1,181 @@
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="../css/order_management_page.css">
+  <link rel="stylesheet" href="../css/generic.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src = "https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="../js/order_management_page.js"></script>
+  <script src = "https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <div id = "title_bar">
+
+  	<div class = "title" id = "title_bar_title">ToYoDo</div>
+
+  	<button id = "title_bar_sign_out" type="button" data-tooltip="tooltip" data-placement="bottom" title = "Sign Out"><i class="fa fa-sign-out"></i></button>
+  	<button id = "order_management_create_quote" type="button" data-tooltip="tooltip" data-placement="bottom" title = "Create Quote" data-toggle="modal" data-target="#new_quote_modal"><i class="fa fa-plus"></i></button>
+    <button id = "order_management_import_product" data-tooltip="tooltip" data-placement="bottom" title = "Import Product" type="button" class="btn btn-primary" data-toggle="modal" data-target="#import_products_modal"><i class="fa fa-upload"></i></button>
+    
+    
+
+  </div>
+
+</head>
+
+
+<body>
+
+
+
+
+<div class = "datatable_view">
+    <div id = "order_management_info">
+      <div><div>Ravi Sharma</div><div>E854</div></div>
+      <div><div>Last Login</div><div>2019-01-02</div></div>
+    </div> 
+    <h4>Order Management</h4>
+    <table id="order_management_table" class="display_table" style="width:100%">
+            <thead>
+                <tr>
+                <th>Order Id</th>
+                <th>Customer Name</th>
+                <th>Order Date</th>
+                <th>Order Value</th>
+                <th>Customer City</th>
+                <th>Status</th>
+                <th>Invoice</th>  
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+    </table>
+  </div>
+
+
+
+
+
+<div class="modal" id = "import_products_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><b>Import Product</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="file" id="import_products_file" name="filename">
+        <div id = "import_products_info"></div>
+      </div>
+      <div class="modal-footer">
+        <button id = "import_products_submit" class="btn btn-secondary" type="button">Upload</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal" id = "new_quote_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><b>Create New Quote</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class = "container">
+
+          <div class = "row">
+            <div class = "col-3">
+              <label for="nqdate">Order Date: </label><br>
+              <input type="date" id="new_quote_date" name="qdate" required>
+            </div>
+            <div class = "col-3">
+              <label for="nqname">Name: </label><br>
+              <input type="text" id="new_quote_name" name="nqname" required>
+            </div>
+            <div class = "col-3">
+              <label for="nqgst">GST No.: </label><br>
+              <input type="text" id="new_quote_gst" name="nqgst" required>
+            </div>       
+            <div class = "col-3">
+              <label for="nqshipping">Shipping Address: </label><br>
+              <textarea type="text" id="new_quote_shipping" name="nqshipping" required></textarea> 
+            </div>
+          </div>
+          <div class = "row">
+            <div class = "col-3">
+              <label for="nqcity">City: </label><br>
+              <input type="text" id="new_quote_city" name="nqcity" required>
+            </div>
+            <div class = "col-3">
+              <label for="nqphone">Phone: </label><br>
+              <input type="text" id="new_quote_phone" name="nqphone" maxlength="10" required>
+            </div>
+            <div class = "col-3">
+              <label for="nqemail">Email: </label><br>
+              <input type="text" id="new_quote_email" name="nqemail" required>
+            </div>
+            <div class = "col-3">
+              <label for="nqpin">Pin Code: </label><br>
+              <input type="text" id="new_quote_pin" name="nqpin" maxlength="6" required>
+            </div>
+          </div>
+
+          <div class = "row_table">
+            <div>Product List</div><br>
+            <table id="new_quote_product_table" class="display_table" style="width:100%">
+                    <thead>
+                        <tr>
+                        <th>Product Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Add</th>            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+            </table>
+          </div>
+
+
+          <div class = "row">
+            <div class = "col-6">
+              <label for="nqshippingcost">Shipping Cost: </label><br>
+              <input type="text" id="new_quote_shipping_cost" name="nqshippingcost" required>
+            </div>
+            <div class = "col-6">
+              <label for="nqtotal">Total Cost: </label><br>
+              <input type="text" id="new_quote_total" name="nqtotal" required><br>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button id = "new_quote_create" class="btn btn-secondary" type="button">Create</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+<iframe src = "footer.html"></iframe>
+</html>

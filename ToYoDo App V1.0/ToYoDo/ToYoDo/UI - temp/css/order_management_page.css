@@ -1,0 +1,62 @@
+
+
+
+#order_management_info{
+	width: 94vw;
+    color: #088F8F;
+    padding: 25px 0px 48px 0px;
+    
+    font-weight: bold;
+}
+
+#order_management_info > div:nth-child(1){
+	float:left;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#order_management_info > div:nth-child(2){
+	float:right;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+
+
+
+
+#new_quote_modal > .modal-dialog{
+	width: 96vw;
+    margin-top: -130px;
+    
+}
+
+#new_quote_modal .col-3{
+	width:24%;
+}
+
+#new_quote_modal .col-6{
+	width:49%;
+}
+
+#new_quote_modal .row{
+	display:flex;
+	padding: 10px 20px;
+}
+
+.modal-body .container{
+	width:100%;
+}
+
+.row_table{
+	width:100%;
+	margin:10px 0px;
+}
+
+
+
+
+
+
+
+

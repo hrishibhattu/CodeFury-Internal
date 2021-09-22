@@ -1,0 +1,49 @@
+
+#homepage_container{
+	height: 520px;
+	width: 100vw;
+}
+
+.carousel{
+	height:100%;
+}
+
+.carousel .item img{
+	height:100%;
+	width:100%;
+}
+
+
+.carousel-inner{
+	height:100%;
+}
+
+.homepage_ads{
+	width: 22vw;
+	height: auto;
+	float:left;
+	margin: 20px 1vw;
+	border: 1px solid #d0d0d0;
+	border-radius: 10px;
+	box-shadow: 2px 2px 7px 2px #d0d0d0;
+
+}
+
+
+.homepage_first_ad{
+	margin-left: 2vw;
+}
+
+.homepage_ads > div{
+	padding: 20px;
+    font-size: 20px;
+    font-family: arial;
+    font-weight: bold;
+}
+
+.homepage_ads > img{
+	vertical-align: middle;
+    width: 90%;
+    height: 400px;
+    margin: 0px 3% 20px 5%;
+}

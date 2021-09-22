@@ -1,0 +1,71 @@
+
+#customer_login_cover{
+	display:flex;
+}
+
+#customer_login_content{
+    margin: auto;
+    height: 570px;
+    width: 1200px;
+    display: flex;
+}
+
+#customer_login_title_outer{
+	margin: auto;
+	width: 400px;
+}
+
+#customer_login_title{
+	font-size: 60px;
+    font-weight: bold;
+    font-family: courier;
+    color: #088F8F;
+
+}
+
+#customer_login_description{
+	font-size: 20px;
+}
+
+#customer_login_sign_in{
+	font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#customer_login_login_div{
+	height: 360px;
+    width: 400px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    margin: auto;
+    display: flex;
+    box-shadow: 2px 2px 7px 2px #d0d0d0;
+}
+
+#customer_login_login_div > div{
+	margin: auto;
+}
+
+#customer_login_login_div > div > input{
+	font-size:17px;
+	height: 60px;
+	border-radius: 5px;
+	width: 325px;
+	border: 1px solid grey;
+	padding: 10px;
+	color: grey;
+}
+
+
+#customer_login_submit{
+	font-size:17px;
+	height: 60px;
+	border-radius: 5px;
+	width: 325px;
+	padding: 10px;
+	margin-top: 25px;
+	background-color: #088F8F;
+	color: white;
+	font-weight:bold;
+}

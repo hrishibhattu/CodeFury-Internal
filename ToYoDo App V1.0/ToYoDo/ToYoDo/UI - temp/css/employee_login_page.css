@@ -1,0 +1,71 @@
+
+#employee_login_cover{
+	display:flex;
+}
+
+#employee_login_content{
+    margin: auto;
+    height: 570px;
+    width: 1200px;
+    display: flex;
+}
+
+#employee_login_title_outer{
+	margin: auto;
+	width: 400px;
+}
+
+#employee_login_title{
+	font-size: 60px;
+    font-weight: bold;
+    font-family: courier;
+    color: #088F8F;
+
+}
+
+#employee_login_description{
+	font-size: 18px;
+}
+
+#employee_login_sign_in{
+	font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#employee_login_login_div{
+	height: 360px;
+    width: 400px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    margin: auto;
+    display: flex;
+    box-shadow: 2px 2px 7px 2px #d0d0d0;
+}
+
+#employee_login_login_div > div{
+	margin: auto;
+}
+
+#employee_login_login_div > div > input{
+	font-size:17px;
+	height: 60px;
+	border-radius: 5px;
+	width: 325px;
+	border: 1px solid grey;
+	padding: 10px;
+	color: grey;
+}
+
+
+#employee_login_submit{
+	font-size:17px;
+	height: 60px;
+	border-radius: 5px;
+	width: 325px;
+	padding: 10px;
+	margin-top: 25px;
+	background-color: #088F8F;
+	color: white;
+	font-weight:bold;
+}

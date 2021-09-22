@@ -10,4 +10,5 @@ public interface EmployeeService {
 	String employeeLogin(Employee employeeLogin);
 	List<Order> listOrder();
 	List<Products> listProducts();
+	void importProducts(List<Products> products);
 }

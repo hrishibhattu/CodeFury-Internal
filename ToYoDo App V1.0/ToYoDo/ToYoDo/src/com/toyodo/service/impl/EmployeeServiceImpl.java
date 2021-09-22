@@ -31,4 +31,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public List<Products> listProducts() {
 		return employeeDAO.listProducts();
 	}
+
+	@Override
+	public void importProducts(List<Products> products) {
+		employeeDAO.importProducts(products);
+	}
 }

@@ -70,7 +70,7 @@ if (employeeID == null || httpSession.isNew()){
 					<div class="form-row">
 						<div class="form-group col-md-4">
 							<label for="phone">Phone Number</label> <input type="number"
-							class="form-control" id="phone" value=${email}>
+							class="form-control" id="phone" value=${phone}>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="email">Email</label> <input type="email"

@@ -1,11 +1,13 @@
 package com.toyodo.dao.impl;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 import com.toyodo.dao.EmployeeDAO;
 import com.toyodo.model.Employee;
@@ -171,6 +173,36 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		if (rs != null) {
 			try {
 				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+
+	@Override
+	public void importProducts(List<Products> products) {
+		createConnection();
+		PreparedStatement ps = null;
+		String insertSql = "INSERT INTO products VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE name=?, price=?, category=?";
+		try {
+			ps = con.prepareStatement(insertSql);
+			for(Products p: products) {
+				ps.setString(1, p.getProduct_id());
+				ps.setString(2, p.getName());
+				ps.setDouble(3, p.getPrice());
+				ps.setString(4, p.getCategory());
+				ps.setString(5, p.getName());
+				ps.setDouble(6, p.getPrice());
+				ps.setString(7, p.getCategory());
+				ps.execute();
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				ps.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

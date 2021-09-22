@@ -1,0 +1,36 @@
+<html>
+        <head>
+            <title>ToYoDo_Calendar</title>
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+            <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+            <script>
+			var today = new Date();
+			var w=today.getDay();
+			var max=3;
+            $(function () {
+			if(w==0 || w==1 || w==2){
+			max=3;
+			}
+			if(w==3 || w==4 || w==5){
+			max=5;
+			}
+			if(w==6){
+			max=4;
+			}
+                $("#datepicker").datepicker({
+				minDate:0,
+				beforeShowDay: function (d) {
+                        var day = d.getDay();
+                        return [day != 0 && day != 6];
+                    },
+                });
+				$('#datepicker').datepicker('option', 'maxDate', max);
+            });
+            </script>
+        </head>
+        <body>
+            <input type="text" id="datepicker" />
+        </body>
+        </html>

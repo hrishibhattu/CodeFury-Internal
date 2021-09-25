@@ -1,9 +1,12 @@
 package com.toyodo.model;
 
 public class Employee {
+	//attributes
 	private String employee_id;
 	private String name;
 	private String password;
+	
+	//getter setter
 	public String getEmployee_id() {
 		return employee_id;
 	}
@@ -22,8 +25,10 @@ public class Employee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	//constructor
 	public Employee(String employee_id, String password) {
-		super();
+		
 		this.employee_id = employee_id;
 		this.password = password;
 	}

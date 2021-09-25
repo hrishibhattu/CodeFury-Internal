@@ -13,7 +13,7 @@ import com.toyodo.utils.DBConnection;
  * @author JAVATAR
  * */
 
-public class CustomerDAOImpl implements CustomerDAO{
+public class CustomerDAOImpl implements CustomerDAO {
 	private static CustomerDAOImpl customerDAOImpl;
 	private Connection con;
 	private PreparedStatement ps;
@@ -32,8 +32,7 @@ public class CustomerDAOImpl implements CustomerDAO{
 	public void createConnection() {
 		con = DBConnection.createConnection();
 	}
-	
-	
+
 	@Override
 	public String customerLogin(Customer customerLogin) {
 		createConnection();
@@ -53,7 +52,7 @@ public class CustomerDAOImpl implements CustomerDAO{
 			closeConnection();
 		}
 		return credential;
-		
+
 	}
 
 	@Override
@@ -72,5 +71,86 @@ public class CustomerDAOImpl implements CustomerDAO{
 				e.printStackTrace();
 			}
 		}
+	}
+
+	@Override
+	public String getLastAccessTime(String customerId, String currentAccess) {
+		String lastLoginTime = "Accessing for first time";
+		createConnection();
+		try {
+			String query = "select logintime from `last_login_details` WHERE `login_id` = ?";
+			ps = con.prepareStatement(query);
+			ps.setString(1, customerId);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				lastLoginTime = rs.getString("logintime");
+				System.out.println(lastLoginTime + " in dao");// debug
+				String updateQuery = "update `last_login_details` set logintime=? where login_id = ?";
+				ps = con.prepareStatement(updateQuery);
+				ps.setString(1, currentAccess);
+				ps.setString(2, customerId);
+				ps.executeUpdate();
+			} else {
+				String currentAccessTime = currentAccess;
+				String insQuery = "insert into `last_login_details` values(?,?)";
+				ps = con.prepareStatement(insQuery);
+				ps.setString(1, customerId);
+				ps.setString(2, currentAccessTime);
+				ps.execute();
+			}
+		} catch (SQLException sqlex) {
+			System.out.println(sqlex);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return lastLoginTime;
+	}
+
+	@Override
+	public String getCustomerDetailsByEmpId(String custId) {
+		createConnection();
+		String customerName = null;
+		try {
+			String query = "select name from `customer_login_credential` WHERE `customer_id` = ?";
+			ps = con.prepareStatement(query);
+			ps.setString(1, custId);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				customerName = rs.getString("name");
+				System.out.println(customerName + " in dao");// debug
+			}
+
+		} catch (SQLException sqlex) {
+			System.out.println(sqlex);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return customerName;
 	}
 }

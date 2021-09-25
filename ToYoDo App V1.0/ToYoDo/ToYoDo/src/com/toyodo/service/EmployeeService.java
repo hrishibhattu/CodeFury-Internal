@@ -11,4 +11,6 @@ public interface EmployeeService {
 	List<Order> listOrder();
 	List<Products> listProducts();
 	void importProducts(List<Products> products);
+	public String getEmployeeName(String employeeId);
+	String getLastAccessTime(String employeeId, String currentAccessTime);
 }

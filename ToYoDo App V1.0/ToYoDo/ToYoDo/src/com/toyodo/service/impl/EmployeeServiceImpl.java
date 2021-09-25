@@ -36,4 +36,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void importProducts(List<Products> products) {
 		employeeDAO.importProducts(products);
 	}
+
+	public String getEmployeeName(String employeeId) {
+		return employeeDAO.getEmployeeDetailsByEmpId(employeeId);
+	}
+
+	@Override
+	public String getLastAccessTime(String employeeId, String currentAccessTime) {
+		return employeeDAO.getLastAccessTime(employeeId, currentAccessTime);
+	}
 }

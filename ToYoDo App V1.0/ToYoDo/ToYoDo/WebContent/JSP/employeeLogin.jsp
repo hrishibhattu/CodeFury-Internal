@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Employee Login</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	(function() {
 		'use strict';
@@ -31,11 +35,11 @@
 </script>
 </head>
 <body>
-	<%@include file="/WEB-INF/nav/indexNav.html" %>
-	
+	<%@include file="/WEB-INF/nav/indexNav.html"%>
+
 	<%
-		String loginStatus = (String) request.getAttribute("loginStatus");
-		if (loginStatus != null) {
+	String loginStatus = (String) request.getAttribute("loginStatus");
+	if (loginStatus != null) {
 	%>
 	<div class="alert alert-danger alert-dismissible fade show"
 		role="alert">
@@ -46,7 +50,7 @@
 		</button>
 	</div>
 	<%
-		}
+	}
 	%>
 
 	<div class="card border-info container" style="max-width: 46rem;">
@@ -58,8 +62,8 @@
 				<div class="form-group">
 					<label for="validUsername">Employee ID</label> <input type="text"
 						class="form-control" id="employeeID" name="employeeID"
-						placeholder="Enter Employee ID" aria-describedby="inputGroupPrepend"
-						required>
+						placeholder="Enter Employee ID"
+						aria-describedby="inputGroupPrepend" required>
 					<div class="invalid-feedback">Employee ID is missing!</div>
 					<div class="form-group">
 						<label for="inputPassword">Password</label> <input type="password"
